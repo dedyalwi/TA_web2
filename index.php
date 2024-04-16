@@ -1,5 +1,5 @@
 <?php
-require 'function.php';
+require 'functions.php';
 $buku = query("SELECT * FROM data_buku");
 ?>
 <!DOCTYPE html>
@@ -11,6 +11,8 @@ $buku = query("SELECT * FROM data_buku");
 </head>
 <body>
     <h1>Daftar Buku</h1>
+    <a href="tambah.php">Tambah Data Buku</a>
+    <br></br>
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th>No.</th>
@@ -26,8 +28,8 @@ $buku = query("SELECT * FROM data_buku");
         <tr>
             <td><?= $i ?></td>
             <td>
-                <a href="">ubah</a>
-                <a href="">hapus</a>
+                <a href="">ubah</a> |
+                <a href="hapus.php?id=<?= $row['id']; ?>">hapus</a>
             </td>
             <td>
                 <img src="img/<?= $row['gambar'] ?>" width="50">
