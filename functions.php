@@ -35,3 +35,25 @@ function hapus($id){
     mysqli_query($koneksi, "DELETE FROM data_buku WHERE id = $id");
     return mysqli_affected_rows($koneksi);
 }
+
+function ubah($data){
+    global $koneksi;
+    $id = $data["id"];
+    $judul = htmlspecialchars($data["judul"]);
+    $pengarang = htmlspecialchars($data["pengarang"]);
+    $penerbit = htmlspecialchars($data["penerbit"]);
+    $tahun = htmlspecialchars($data["tahun"]);
+    $gambar = htmlspecialchars($data["gambar"]);
+
+    $query = "UPDATE data_buku SET
+                judul ='$judul',
+                pengarang = '$pengarang',
+                penerbit = '$penerbit',
+                tahun = '$tahun',
+                gambar = '$gambar' 
+            WHERE id = $id
+
+        ";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
