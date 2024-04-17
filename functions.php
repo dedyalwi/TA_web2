@@ -57,3 +57,16 @@ function ubah($data){
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
+
+function cari($keyword){
+    $query = "SELECT * FROM data_buku
+                WHERE
+                judul LIKE  '%$keyword%' OR
+                pengarang  LIKE  '%$keyword%' OR
+                penerbit LIKE  '%$keyword%' OR
+                tahun LIKE  '%$keyword%'
+
+            ";
+    return query($query);         
+
+    }

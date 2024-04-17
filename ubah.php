@@ -37,36 +37,40 @@ if ( isset($_POST["submit"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Ubah Data</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Ubah Data Buku</h1>
     <form action="" method="POST">
         <input type="hidden" name="id" value="<?= $buku["id"]; ?>">
-        <ul>
-            <li>
-                <label for="judul">Judul :</label>
-                <input type="text" name="judul" id="judul" required value="<?= $buku["judul"]; ?>">
-            </li>
-            <li>
-                <label for="pengarang">Pengarang :</label>
-                <input type="text" name="pengarang" id="pengarang" required value="<?= $buku["pengarang"]; ?>">
-            </li>
-            <li>
-                <label for="penerbit">Penerbit :</label>
-                <input type="text" name="penerbit" id="penerbit" required value="<?= $buku["penerbit"]; ?>">
-            </li>
-            <li>
-                <label for="tahun">Tahun :</label>
-                <input type="text" name="tahun" id="tahun" required value="<?= $buku["tahun"]; ?>">
-            </li>
-            <li>
-                <label for="gambar">Gambar :</label>
-                <input type="text" name="gambar" id="gambar" required value="<?= $buku["gambar"]; ?>">
-            </li>
+        <table>
+    
+            <tr>
+                <td for="judul"align="left">Judul :</td>
+                <td><input type="text" name="judul" id="judul" required value="<?= $buku["judul"]; ?>"></td>
+            </tr>
+            <tr>
+                <td for="pengarang"align="left">Pengarang :</td>
+                <td><input type="text" name="pengarang" id="pengarang" required value="<?= $buku["pengarang"]; ?>"></td>
+            </tr>
+            <tr>
+                <td for="penerbit"align="left">Penerbit :</td>
+                <td><input type="text" name="penerbit" id="penerbit" required value="<?= $buku["penerbit"]; ?>"></td>
+            </tr>
+            <tr>
+                <td for="tahun"align="left">Tahun :</td>
+                <td><input type="text" name="tahun" id="tahun" required value="<?= $buku["tahun"]; ?>"></td>
+            </tr>
+            <tr>
+                <td for="gambar"align="left">Gambar :</td>
+                <td><input type="text" name="gambar" id="gambar" required value="<?= $buku["gambar"]; ?>"></td>
+            </tr>
+        </table>
             <br></br>
-            <li>
+            
                 <button type="submit" name="submit">Ubah Data</button>
-            </li>
-        </ul>
+
+   
+        
     </form>
 </body>
